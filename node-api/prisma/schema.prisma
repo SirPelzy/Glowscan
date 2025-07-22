@@ -1,1 +1,83 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
 
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                 String               @id @default(cuid())
+  email              String               @unique
+  password           String?
+  firstName          String?
+  lastName           String?
+  createdAt          DateTime             @default(now())
+  updatedAt          DateTime             @updatedAt
+  role               Role                 @default(USER)
+  subscriptionStatus SubscriptionStatus @default(FREE)
+  routines           SkincareRoutine[]
+  progress           Progress[]
+  socialAccounts     SocialAccount[]
+}
+
+model SocialAccount {
+  id        String   @id @default(cuid())
+  provider  String
+  providerId String
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  @@unique([provider, providerId])
+}
+
+model SkincareRoutine {
+  id          String    @id @default(cuid())
+  name        String
+  description String?
+  user        User      @relation(fields: [userId], references: [id])
+  userId      String
+  products    Json?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Product {
+  id          String   @id @default(cuid())
+  name        String
+  brand       String
+  category    String
+  price       Float
+  description String
+  imageUrl    String
+  affiliateLink String
+  segment     ProductSegment
+}
+
+model Progress {
+  id          String   @id @default(cuid())
+  user        User     @relation(fields: [userId], references: [id])
+  userId      String
+  date        DateTime @default(now())
+  imageUrl    String
+  analysis    Json
+  createdAt   DateTime @default(now())
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum SubscriptionStatus {
+  FREE
+  PREMIUM
+}
+
+enum ProductSegment {
+  BUDGET
+  LUXURY
+}
