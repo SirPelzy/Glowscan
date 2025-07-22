@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import passport from 'passport';
+import './config/passport';
 
 import authRoutes from './api/routes/authRoutes';
 import userRoutes from './api/routes/userRoutes';
