@@ -1,1 +1,31 @@
+version: '3.8'
 
+services:
+  node-api:
+    build: ./node-api
+    container_name: glowscan-node-api
+    restart: unless-stopped
+    env_file: ./node-api/.env
+    ports:
+      - "3000:3000"
+    depends_on:
+      - python-ai-service
+    networks:
+      - glowscan-net
+    volumes:
+      - ./node-api/src:/app/src # Optional: for development live reload
+
+  python-ai-service:
+    build: ./python-ai-service
+    container_name: glowscan-python-ai
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    networks:
+      - glowscan-net
+    volumes:
+      - ./python-ai-service:/app # Optional: for development live reload
+
+networks:
+  glowscan-net:
+    driver: bridge
