@@ -1,1 +1,54 @@
+name: glowscan_app
+description: AI-powered skin analyzer and personalized skincare routine builder.
 
+publish_to: 'none' # Remove this line if you intend to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # Backend Connectivity & Data Handling
+  dio: ^5.3.3                 # For making HTTP requests to your backend
+  shared_preferences: ^2.2.1  # For simple data persistence
+  flutter_secure_storage: ^9.0.0 # For securely storing auth tokens
+
+  # State Management
+  flutter_riverpod: ^2.4.0      # For managing app state
+
+  # UI & UX
+  flutter_svg: ^2.0.7           # For using SVG images (like social logos)
+  carousel_slider: ^4.2.1       # For the onboarding tutorial
+  image_picker: ^1.0.4          # For camera and gallery access
+  fl_chart: ^0.64.0             # For the progress trend graph
+  url_launcher: ^6.1.14         # For opening affiliate links
+
+  # Add other packages as needed
+  # revenuecat_purchases_flutter: ^5.0.0 # If using RevenueCat for subscriptions
+  
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/images/
+    - assets/fonts/
+
+  # To add custom fonts, add a fonts section here
+  # fonts:
+  #   - family: Poppins
+  #     fonts:
+  #       - asset: assets/fonts/Poppins-Regular.ttf
+  #       - asset: assets/fonts/Poppins-Bold.ttf
+  #         weight: 700
