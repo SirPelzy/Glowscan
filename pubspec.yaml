@@ -45,9 +45,9 @@ flutter:
     - assets/images/
     - assets/fonts/
 
-   To add custom fonts, add a fonts section here
-   fonts:
+   #To add custom fonts, add a fonts section here
+  fonts:
      - family: Lexend
        fonts:
          - asset: assets/fonts/Lexend-VariableFont_wght.tff
-           weight: <weight>
+           weight: 700

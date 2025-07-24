@@ -1,0 +1,10 @@
+tasks:
+  - init: |
+      # Install Flutter SDK
+      wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.24.0-stable.tar.xz
+      tar xf flutter_linux_3.24.0-stable.tar.xz -C /workspace
+      export PATH="$PATH:/workspace/flutter/bin"
+      flutter pub get
+    command: |
+      export PATH="$PATH:/workspace/flutter/bin"
+      flutter doctor
