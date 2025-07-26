@@ -23,9 +23,9 @@ class _MainScreenState extends State<MainScreen> {
     DashboardScreen(),
     // The Scan screen is usually presented modally, so we handle it in onTap.
     Text('Scan Placeholder'), 
-    Text('Routine Screen'), // Replace with RoutineScreen()
-    Text('Progress Screen'), // Replace with ProgressTrackerScreen()
-    Text('Settings Screen'), // Replace with SettingsScreen()
+    RoutineScreen(),
+    ProgressTrackerScreen()
+    SettingsScreen()
   ];
 
   void _onItemTapped(int index) {
