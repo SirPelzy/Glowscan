@@ -3,10 +3,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:glowscan_app/core/theme/app_theme.dart';
 import 'package:glowscan_app/features/dashboard/screens/dashboard_screen.dart';
 import 'package:glowscan_app/features/scan/screens/image_capture_screen.dart';
-// Import other main screens as you create them
-// import 'package:glowscan_app/features/routine/screens/routine_screen.dart';
-// import 'package:glowscan_app/features/progress/screens/progress_tracker_screen.dart';
-// import 'package:glowscan_app/features/settings/screens/settings_screen.dart';
+import 'package:glowscan_app/features/routine/screens/routine_screen.dart';
+import 'package:glowscan_app/features/progress/screens/progress_tracker_screen.dart';
+import 'package:glowscan_app/features/settings/screens/settings_screen.dart';
+import 'package:glowscan_app/features/products/screens/settings_screen.dart';
+import 'package:glowscan_app/features/settings/screens/settings_screen.dart';
+import 'package:glowscan_app/features/settings/screens/settings_screen.dart';
 
 
 class MainScreen extends StatefulWidget {
