@@ -6,9 +6,7 @@ import 'package:glowscan_app/features/scan/screens/image_capture_screen.dart';
 import 'package:glowscan_app/features/routine/screens/routine_screen.dart';
 import 'package:glowscan_app/features/progress/screens/progress_tracker_screen.dart';
 import 'package:glowscan_app/features/settings/screens/settings_screen.dart';
-import 'package:glowscan_app/features/products/screens/settings_screen.dart';
-import 'package:glowscan_app/features/settings/screens/settings_screen.dart';
-import 'package:glowscan_app/features/settings/screens/settings_screen.dart';
+
 
 
 class MainScreen extends StatefulWidget {
@@ -28,6 +26,7 @@ class _MainScreenState extends State<MainScreen> {
     RoutineScreen(),
     ProgressTrackerScreen()
     SettingsScreen()
+    ProductListScreen()
   ];
 
   void _onItemTapped(int index) {
